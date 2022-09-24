@@ -1,18 +1,9 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet,TouchableOpacity , FlatList } from 'react-native'
 import { useTheme } from '@react-navigation/native';
+import { useState } from "react";
 
-function AccountScreen() {
-  const { colors } = useTheme();
-  return (
-    <View style={[styles.container, {color: colors.background}]}>
-      <Text style={{fontSize: 25, color: colors.text}}>Account page</Text>
-      <StatusBar/>
-    </View>
-  )
-}
-export default AccountScreen
 const DATA = [
   {
     id: "1",
@@ -39,10 +30,12 @@ const DATA = [
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{item.title}</Text>
+    <StatusBar/>
   </TouchableOpacity>
 );
 
 const App = () => {
+  const { colors } = useTheme();
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
@@ -60,14 +53,14 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         extraData={selectedId}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -86,3 +79,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
+
+export default App;
