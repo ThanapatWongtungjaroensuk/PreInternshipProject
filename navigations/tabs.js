@@ -3,7 +3,7 @@ import { Text, View, useColorScheme } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { AntDesign, Ionicons, MaterialCommunityIcons,Feather } from '@expo/vector-icons';
-import { HomeScreen, SettingScreen, NewsScreen} from "../screen/index"
+import { HomeScreen, AccountScreen, NewsScreen} from "../screen/index"
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -14,7 +14,7 @@ export default function Tabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor='#FCC900'
+      activeColor='#FBAA31'
       inactiveColor='#808080'
       shifting={true}
       labelStyle={{ fontSize: 12 }}
@@ -44,7 +44,7 @@ export default function Tabs() {
       />
       <Tab.Screen
         name="Account"
-        component={SettingScreen}
+        component={AccountScreen}
         options={{
           tabBarLabel: 'Account',
           tabBarColor: (colorScheme === 'dark' ? '#232828' : '#FFFFFF'),

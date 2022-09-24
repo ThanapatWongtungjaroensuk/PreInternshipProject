@@ -1,7 +1,8 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet,SafeAreaView, ScrollView } from 'react-native'
+import { View, Text, StyleSheet,SafeAreaView, ScrollView,TouchableOpacity } from 'react-native'
 import { useTheme } from '@react-navigation/native';
+import { FontAwesome, Ionicons} from '@expo/vector-icons';
 import ShowGrid from '../component/showGrid';
 import AnimeData from '../model/animeData.json'
 
@@ -10,9 +11,11 @@ function HomeScreen() {
   return (
     <SafeAreaView style={[styles.container,{color: colors.background}]}>
       <StatusBar/>
-      <View style={styles.headerBar}>
-        <Text style={{fontSize: 25, color: colors.text, fontWeight: '500'}}>ToonView</Text>
-
+      <View style={[styles.headerBar , {color: colors.background}]}>
+        <Text style={{fontSize: 25, color:'#FBAA31', fontWeight: '500'}}>ToonView</Text>
+        <TouchableOpacity style={{}}>
+          <Ionicons name="search" size={24} color={colors.text} />
+        </TouchableOpacity>
       </View>
       <ScrollView style={styles.detailscreen}>
         <View style={styles.thumbFrame}>
@@ -33,7 +36,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerBar: {
-    backgroundColor: '#232828',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 40,
     padding: 10

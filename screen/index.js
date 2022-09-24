@@ -1,12 +1,12 @@
 import HomeScreen from "./homeScreen"
-import SettingScreen from "./settingScreen"
+import AccountScreen from "./accountScreen"
 import NewsScreen from "./newsScreen"
 import SearchScreen from "./searchScreen"
 import LoginScreen from "./loginScreen"
 
 export {
     HomeScreen,
-    SettingScreen,
+    AccountScreen,
     NewsScreen,
     SearchScreen,
     LoginScreen

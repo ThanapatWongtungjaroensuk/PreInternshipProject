@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
     item:{
       width: 110,
       height: 150,
-      borderRadius: 5,
+      borderRadius: 7,
       overflow: 'hidden',
-      marginHorizontal: 3
+      marginRight: 6
     },
     showImage:{
       width: '100%',
