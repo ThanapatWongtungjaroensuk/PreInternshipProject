@@ -12,9 +12,13 @@ function HomeScreen() {
       <StatusBar/>
       <View style={styles.headerBar}>
         <Text style={{fontSize: 25, color: colors.text, fontWeight: '500'}}>ToonView</Text>
+
       </View>
       <ScrollView style={styles.detailscreen}>
         <View style={styles.thumbFrame}>
+          <ShowGrid showData={AnimeData}/>
+          <ShowGrid showData={AnimeData}/>
+          <ShowGrid showData={AnimeData}/>
           <ShowGrid showData={AnimeData}/>
         </View>
       </ScrollView>
@@ -29,7 +33,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerBar: {
-    backgroundColor: 'orange',
+    backgroundColor: '#232828',
+    flexDirection: 'row',
     marginTop: 40,
     padding: 10
   },

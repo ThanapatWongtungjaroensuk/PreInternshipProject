@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, View, useColorScheme } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
-import { HomeScreen, SettingScreen, NewsScreen, SearchScreen} from "../screen/index"
+import { AntDesign, Ionicons, MaterialCommunityIcons,Feather } from '@expo/vector-icons';
+import { HomeScreen, SettingScreen, NewsScreen} from "../screen/index"
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -16,6 +16,7 @@ export default function Tabs() {
       initialRouteName="Home"
       activeColor='#FCC900'
       inactiveColor='#808080'
+      shifting={true}
       labelStyle={{ fontSize: 12 }}
       //barStyle={{ backgroundColor: '#694fad' }}
     >
@@ -31,35 +32,24 @@ export default function Tabs() {
         }}
       />
       <Tab.Screen 
-        name="Search" 
-        component={SearchScreen} 
-        options={{
-          tabBarLabel: 'Search',
-          tabBarColor: (colorScheme === 'dark' ? '#232828' : '#FFFFFF'),
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="search" color={color} size={24} />
-          ),
-        }}
-      />
-      <Tab.Screen 
         name="News"
         component={NewsScreen}
         options={{
           tabBarLabel: 'News',
           tabBarColor: (colorScheme === 'dark' ? '#232828' : '#FFFFFF'),
           tabBarIcon: ({ color }) => (
-            <Ionicons name="newspaper-outline" color={color} size={24} />
+            <Feather name="calendar" color={color} size={24} />
           ),
         }}
       />
       <Tab.Screen
-        name="Setting"
+        name="Account"
         component={SettingScreen}
         options={{
-          tabBarLabel: 'Setting',
+          tabBarLabel: 'Account',
           tabBarColor: (colorScheme === 'dark' ? '#232828' : '#FFFFFF'),
           tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-outline" color={color} size={24} />
+            <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />

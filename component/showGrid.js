@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     createGrid: {
         width: '100%',
         marginVertical: 8,
-        backgroundColor: 'red'
+        //backgroundColor: 'red'
     },
     createTitle:{
         fontSize: 22,
