@@ -39,7 +39,7 @@ const App = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#FBAA31" : "#E0400B";
+    const backgroundColor = item.id === selectedId ? "#E0400B" : "#FBAA31";
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (
