@@ -15,7 +15,7 @@ const DATA = [
   },
   {
     id: "3",
-    title: "settings",
+    title: "Settings",
   },
   {
     id: "4",
@@ -69,11 +69,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 175,
+    backgroundColor: 'black'
   },
   item: {
-    padding: 20,
+    padding: 10,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 0,
   },
   title: {
     fontSize: 32,
