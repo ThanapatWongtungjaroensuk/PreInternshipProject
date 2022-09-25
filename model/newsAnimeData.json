@@ -1,0 +1,82 @@
+[
+    {
+        "id":1,
+        "name":"Tokyo Revengers: Seiya Kessen-hen",
+        "Date": "01/2023",
+        "studios":"Liden Films",
+        "wallpaper":"https://wiki.anime-os.com/image/2021/12/Tokyo-Revengers-Seiya-Kessen-hen-S2.jpg",
+        "Synopsis": "ทาเคมิจิ ได้ข่าวว่า ฮินาตะ อดีตแฟนสาวตอนมัธยมต้นถูกแก๊งโตเกียวมันจิไคฆ่าตายพร้อมน้องชายของเธอ จนเขาพบว่าตนสามารถย้อนเวลาไป 12 ปีก่อน ในสมัยที่ตนมีชื่อเสียง เพื่อแก้ไขอดีตได้"
+    },
+    {
+        "id":2,
+        "name":"The Seven Deadly Sins: Grudge of Edinburgh Part 1/2",
+        "Date": "12/2023",
+        "studios":"Marvy Jack / Alfred Imageworks",
+        "wallpaper":"https://wiki.anime-os.com/image/2021/12/The-Seven-Deadly-Sins-Grudge-of-Edinburgh-Part-12.jpg",
+        "Synopsis": "เรื่องราวของลูกเมลิโอดัส ภาคต่อของ ศึกตำนาน 7 อัศวิน มี 2 พาร์ท"
+    },
+    {
+        "id":3,
+        "name":"Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu. Season 2",
+        "Date": "01/2023",
+        "studios":"Silver Link",
+        "wallpaper":"https://wiki.anime-os.com/image/2020/03/Bofuri-Season-2-Teaser.jpg",
+        "Synopsis": "คาเอเดะ (เมเปิ้ล) เด็กสาวที่ได้รับคำชวนให้มาเล่นเกมแบบโลกเสมือนจริง เน้นอัพค่า Vit เพราะไม่อยากเจ็บตัว แต่กลับกลายเป็นผู้เล่นที่แข็งแกร่ง จนเป็นที่รู้จักภายหลัง"
+    },
+    {
+        "id":4,
+        "name":"Shinka no Mi Season 2",
+        "Date": "01/2023",
+        "studios":"Hotline",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/01/Shinka-no-Mi-Season-2.jpg",
+        "Synopsis": "เซอิจิ หนุ่มอ้วนที่ถูกคนอื่นรังแกประจำ วันหนึ่งพระเจ้าได้ส่งเขาและคนในโรงเรียนไปต่างโลก เซอิจิต้องผจญภัยตามลำพัง จนเขาได้กิน เมล็ดพันธุ์แห่งการวิวัฒนาการ ที่เปลี่ยนแปลงเขาไปจากเดิม"
+    },
+    {
+        "id":5,
+        "name":"NieR:Automata Ver 1.1a",
+        "Date": "01/2023",
+        "studios":"Hotline",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/02/NieRAutomata-Ver-1.1a.jpg",
+        "Synopsis": "อนิเมะจากเกม NieR:Automata"
+    },
+    {
+        "id":6,
+        "name":"Gokushufudou Season 2close",
+        "Date": "01/2023",
+        "studios":"J.C.Staff",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/09/Gokushufudou-S2.jpg",
+        "Synopsis": "ทัตสึ อมตะ ฉายาของอดีตยากูซ่าชื่อดัง จนเขาต้องออกจากวงการกลายมาเป็นพ่อบ้านพ่อเรือนมาดเข้ม"
+    },
+    {
+        "id":7,
+        "name":"Dr.Stone: New World (Season 3)",
+        "Date": "03-05/2023",
+        "studios":"TMS Entertainment",
+        "wallpaper":"https://wiki.anime-os.com/image/2021/03/dr-stone.jpg",
+        "Synopsis": "เกิดเหตุให้มนุษย์ทั้งโลกกลายเป็นหิน เวลาผ่านไปกว่าสามพันปี ในปี ค.ศ. 5738 เซ็นคุ และ ไทจู หลุดออกมาได้ และเริ่มใช้ความรู้ทางวิทยาศาสตร์พัฒนาความเป็นอยู่ของผู้คนที่อาศัยแบบย้อนยุค"
+    },
+    {
+        "id":8,
+        "name":"EDENS ZERO Season 2",
+        "Date": "04/2023",
+        "studios":"J.C.Staff",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/02/EDENS-ZERO-Season-2.jpg",
+        "Synopsis": "ชิกิ ที่อยู่โดดเดี่ยวมานาน จนได้พบกับรีเบ็คก้าและแฮปปี้ ออกเดินทางไปด้วยกัน"
+    },
+    {
+        "id":9,
+        "name":"Isekai wa Smartphone to Tomo ni Season 2",
+        "Date": "04/2023",
+        "studios":"J.C.Staff",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/04/Isekai-wa-Smartphone-to-Tomo-ni-Season-2-1.jpg",
+        "Synopsis": "โมจิซากิ โทยะ ตายเหราะความผิดของพระเจ้า ได้ชีวิตใหม่ในต่างโลก พร้อมสมาร์ทโฟนเทพที่มีฟังก์ชั่นมากมาย ทำให้เขาผจญภัยแบบสบายๆ บนโลกแฟนตาซี"
+    },
+    {
+        "id":10,
+        "name":"Tensei Kizoku no Isekai Boukenroku",
+        "Date": "04/2023",
+        "studios":"EMT² / Magic Bus",
+        "wallpaper":"https://wiki.anime-os.com/image/2022/08/Tensei-Kizoku-no-Isekai-Boukenroku.jpg",
+        "Synopsis": "หลังได้ช่วยเหลือเด็กผู้หญิงจนตาย ทำให้คาซึยะได้ไปเกิดใหม่ในโลกแฟนตาซีในชื่อ ไคน์ ฟอน ซิลฟอร์ด บุตรขุนนางพร้อมพลังมากมาย"
+    }
+]
