@@ -461,7 +461,8 @@
         "trailer_start":"",
         "wallpaper":"https://www.online-station.net/wp-content/uploads/2021/03/01-1200x630-7.jpg",
         "duration":"23 min. per ep.",
-        "score":7.17
+        "score":7.17,
+        "steaming":"https://www.bilibili.tv/th/media/1060402"
     },
     {
         "id":32,
@@ -475,7 +476,8 @@
         "trailer_start":"",
         "wallpaper":"https://sportshub.cbsistatic.com/i/2021/12/17/7e7ca027-1660-4c1b-a188-3725a0e64079/overlord-season-4-anime.jpg",
         "duration":"23 min. per ep.",
-        "score":8.33
+        "score":8.33,
+        "steaming":"https://www.hotstar.com/th/tv/overlord/1260109636"
     },
     {
         "id":33,
@@ -489,7 +491,8 @@
         "trailer_start":"",
         "wallpaper":"https://i0.wp.com/www.animegeek.com/wp-content/uploads/2020/09/Rent-A-Girlfriend-Season-2-Anime-Announcement.jpg?fit=1200%2C675&ssl=1",
         "duration":"24 min. per ep.",
-        "score":6.51
+        "score":6.51,
+        "steaming":"https://www.youtube.com/playlist?list=PLIa05JMgYhha0IOBtjb6obge_y6etfc2Q"
     },
     {
         "id":34,
@@ -503,7 +506,8 @@
         "trailer_start":"",
         "wallpaper":"https://br.atsit.in/th/wp-content/uploads/2022/03/classroom-of-the-elite-e0b88be0b8b5e0b88be0b8b1e0b988e0b899-2-e0b8a3e0b8b1e0b89ae0b882e0b989e0b8ade0b8a1e0b8b9e0b8a5e0b8a7e0b8b1e0b899e0b897.jpg",
         "duration":"23 min. per ep.",
-        "score":8.05
+        "score":8.05,
+        "steaming":"https://www.iq.com/album/%E0%B8%82%E0%B8%AD%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B9%E0%B9%88%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%A1-%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0-%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%84%E0%B8%99-%E0%B8%8B%E0%B8%B5%E0%B8%8B%E0%B8%B1%E0%B8%99-2-%E0%B8%9E%E0%B8%B2%E0%B8%81%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%97%E0%B8%A2-2022-2djuuja41kl?lang=th_th"
     },
     {
         "id":35,
@@ -517,7 +521,8 @@
         "trailer_start":"",
         "wallpaper":"https://www.animegeek.com/wp-content/uploads/2022/06/TV%E3%82%A2%E3%83%8B%E3%83%A1%E3%80%8E%E3%82%88%E3%81%B5%E3%81%8B%E3%81%97%E3%81%AE%E3%81%86%E3%81%9F%E3%80%8F%E6%9C%ACPV-1-19-screenshot.jpg",
         "duration":"22 min. per ep.",
-        "score":8.05
+        "score":8.05,
+        "steaming":"https://animekimi.com/anime/yofukashi-no-uta/"
     },
     {
         "id":36,
@@ -531,7 +536,8 @@
         "trailer_start":"",
         "wallpaper":"http://static.hidive.com/titles/MIA/MIA_02_KEY_1200x450.jpg",
         "duration":"24 min. per ep.",
-        "score":8.77
+        "score":8.77,
+        "steaming":"https://www.viu.com/ott/th/th/vod/443933/Made-in-Abyss-The-Golden-City-of-the-Scorching-Sun"
     }, 
     {
         "id":37,
@@ -545,7 +551,8 @@
         "trailer_start":"",
         "wallpaper":"https://coolthemestores.com/wp-content/uploads/2021/01/hunter-x-hunter-featured.jpg",
         "duration":"23 min. per ep",
-        "score":"8.40"
+        "score":"8.40",
+        "steaming":"https://www.viu.com/ott/th/th/vod/350180/Hunter-x-Hunter#tab1"
     },
     {
         "id":38,
@@ -559,7 +566,8 @@
         "trailer_start":"",
         "wallpaper":"https://images4.alphacoders.com/783/thumb-1920-783031.jpg",
         "duration":"23 min. per ep",
-        "score":"8.35"
+        "score":"8.35",
+        "steaming":"https://www.netflix.com/th/title/80006146"
     },
     {
         "id":39,
@@ -573,7 +581,8 @@
         "trailer_start":"",
         "wallpaper":"https://images3.alphacoders.com/102/thumb-1920-1022925.jpg",
         "duration":"22 min. per ep",
-        "score":"8.34"
+        "score":"8.34",
+        "steaming":"https://wetv.vip/th/play/vtymnf432wxgsqm/w0036s4lxry"
     },
     {
         "id":40,
@@ -587,7 +596,8 @@
         "trailer_start":"",
         "wallpaper":"https://images.alphacoders.com/901/901101.png",
         "duration":"24 min. per ep",
-        "score":"8.67"
+        "score":"8.67",
+        "steaming":"https://animekimi.com/anime/violet-evergarden/"
     },
     {
         "id":41,
@@ -601,7 +611,8 @@
         "trailer_start":"",
         "wallpaper":"https://wallpapercave.com/dwp1x/oIkImQt.jpg",
         "duration":"25 min. per ep",
-        "score":"8.31"
+        "score":"8.31",
+        "steaming":"https://anime-fast.online/803/initial-d-first-stage-%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%8B%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%94%E0%B8%A3%E0%B8%B4%E0%B8%9F%E0%B8%97%E0%B9%8C%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9F%E0%B9%89%E0%B8%B2-%E0%B8%A0%E0%B8%B2%E0%B8%841-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1-26-%E0%B8%9E%E0%B8%B2%E0%B8%81%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%97%E0%B8%A2"
     },
     {
         "id":42,
@@ -615,7 +626,8 @@
         "trailer_start":"",
         "wallpaper":"https://pic-bstarstatic.akamaized.net/ugc/541aa0712f07a142e3badcfabc170599.jpg",
         "duration":"1 hr. 47 min.",
-        "score":"8.30"
+        "score":"8.30",
+        "steaming":"https://www.bilibili.tv/th/video/2007626144"
     },
     {
         "id":43,
@@ -629,7 +641,8 @@
         "trailer_start":"",
         "wallpaper":"https://wallpaperaccess.com/kotaro-lives-alone",
         "duration":"27 min. per ep",
-        "score":"8.30"
+        "score":"8.30",
+        "steaming":"https://www.netflix.com/th/title/81275353"
     },
     {
         "id":44,
@@ -643,7 +656,8 @@
         "trailer_start":"",
         "wallpaper":"https://images8.alphacoders.com/100/thumbbig-1004865.webp",
         "duration":"24 min. per ep",
-        "score":"8.24"
+        "score":"8.24",
+        "steaming":"https://dororo-anime.com/"
     },
     {
         "id":45,
@@ -657,7 +671,8 @@
         "trailer_start":"",
         "wallpaper":"https://images5.alphacoders.com/115/1154088.jpg",
         "duration":"1 hr. 41 min",
-        "score":"8.24"
+        "score":"8.24",
+        "steaming":"https://www.bilibili.tv/th/video/2045448654"
     },
     {
         "id":46,
@@ -671,7 +686,8 @@
         "trailer_start":"",
         "wallpaper":"https://shruthikas.weebly.com/uploads/1/9/9/7/19978153/327956_orig.jpg",
         "duration":"25 min. per ep",
-        "score":"8.23"
+        "score":"8.23",
+        "steaming":"https://www.viu.com/ott/th/th/vod/364872/Magi-The-Kingdom-of-Magic"
     },
     {
         "id":47,
@@ -685,7 +701,8 @@
         "trailer_start":"",
         "wallpaper":"https://www.teahub.io/photos/full/75-758947_bungou-stray-dogs-season-3.jpg",
         "duration":"23 min. per ep",
-        "score":"8.22"
+        "score":"8.22",
+        "steaming":"https://aisplay.ais.co.th/portal/get_section/5cb18259aae731729dbea35f/"
     },
     {
         "id":48,
@@ -699,7 +716,8 @@
         "trailer_start":"",
         "wallpaper":"https://preview.redd.it/g49vdkggfvf71.png?width=960&crop=smart&auto=webp&s=acaf2d7eec942ec6dd5e3a90e2234d3344ec8c9a",
         "duration":"1 hr. 51 min",
-        "score":"8.22"
+        "score":"8.22",
+        "steaming":"https://fairyani.me/watch/um51xhj0uz/"
     },
     {
         "id":49,
@@ -713,7 +731,8 @@
         "trailer_start":"",
         "wallpaper":"https://p4.wallpaperbetter.com/wallpaper/651/851/607/anime-no-game-no-life-no-game-no-life-zero-riku-dola-wallpaper-preview.jpg",
         "duration":"1 hr. 46 min",
-        "score":"8.21"
+        "score":"8.21",
+        "steaming":"https://www.bilibili.tv/th/download"
     },
     {
         "id":50,
@@ -727,7 +746,8 @@
         "trailer_start":"",
         "wallpaper":"https://occ-0-3212-38.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWKTvkLe6Yo4YbgPrTgSbnAmE7B1DeizYsTrta0XQ-BaO3pYyiOBANvU4oTnSgOGX7A40czAcA1wxnVINuZCreb5fxHPK4jKzmZB.jpg?r=67a",
         "duration":"1 hr. 35 min",
-        "score":"8.21"
+        "score":"8.21",
+        "steaming":"https://www.i-moviehd.com/stand-by-me-doraemon-2/"
     },
     {
         "id":51,
