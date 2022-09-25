@@ -19,10 +19,6 @@ const DATA = [
   },
   {
     id: "4",
-    title: "Account",
-  },
-  {
-    id: "5",
     title: "Help",
   },
 ];
