@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, useColorScheme } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import AuthStack from './navigations/authStack';
 import Tabs from './navigations/tabs';
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
 
   return (
     <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Tabs/>
+      <AuthStack/>
     </NavigationContainer>
   );
 }

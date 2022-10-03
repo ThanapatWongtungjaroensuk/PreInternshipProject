@@ -4,17 +4,17 @@ import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } fr
 import ShowThumbnails from './showThumb';
 import { useTheme } from '@react-navigation/native';
 import { Entypo} from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-
-function ShowGrid({ showData }) {
-
+function ShowGrid({ showData, title }) {
+    const navigation = useNavigation(); 
     const { colors } = useTheme();
 
     return (
     <View style={styles.createGrid}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <Text style={[{color: colors.text},styles.createTitle]}>All Anime</Text>
-            <TouchableOpacity style={{marginRight: 15, marginTop: 3}}>
+            <Text style={[{color: colors.text},styles.createTitle]}>{title}</Text>
+            <TouchableOpacity style={{marginRight: 15, marginTop: 3}} onPress={() => navigation.navigate('AnimeFromTypePage', {titleName: title})}>
                 <Entypo name="chevron-right" size={20} color={colors.text} />
             </TouchableOpacity>
         </View>
