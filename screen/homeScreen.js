@@ -5,12 +5,11 @@ import { useTheme } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/core'
 import { FontAwesome, Ionicons} from '@expo/vector-icons';
 import ShowGrid from '../component/showGrid';
-import AnimeData from '../model/animeData.json'
 
 function HomeScreen() {
   const { colors } = useTheme();
   const navigation = useNavigation()
-  
+
   return (
     <SafeAreaView style={[styles.container,{color: colors.background}]}>
       <StatusBar/>
@@ -22,10 +21,8 @@ function HomeScreen() {
       </View>
       <ScrollView style={styles.detailscreen}>
         <View style={styles.thumbFrame}>
-          <ShowGrid showData={AnimeData} title="Top Anime"/>
-          <ShowGrid showData={AnimeData} title="New Anime"/>
-          <ShowGrid showData={AnimeData} title="All Anime"/>
-          <ShowGrid showData={AnimeData} title="The Movie Anime"/>
+          <ShowGrid title="Top Anime"/>
+          <ShowGrid title="New Anime"/>
         </View>
       </ScrollView>
     </SafeAreaView>

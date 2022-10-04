@@ -12,7 +12,7 @@ function RegisterScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
-  const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
+  const { passwordVisibility, rightIcon, handlePasswordVisibility, passwordVisibilityConfirm, rightIconConfirm, handlePasswordVisibilityConfirm } = useTogglePasswordVisibility();
   const { colors } = useTheme();
   const navigation = useNavigation()
 
@@ -65,10 +65,10 @@ function RegisterScreen() {
                 value={passwordConfirm}
                 onChangeText={text => setPasswordConfirm(text)}
                 style={styles.input}
-                secureTextEntry={passwordVisibility}
+                secureTextEntry={passwordVisibilityConfirm}
             />
-            <Pressable onPress={handlePasswordVisibility}>
-                <MaterialCommunityIcons name={rightIcon} size={22} color="#232323" />
+            <Pressable onPress={handlePasswordVisibilityConfirm}>
+                <MaterialCommunityIcons name={rightIconConfirm} size={22} color="#232323" />
             </Pressable>
         </View>
       </View>

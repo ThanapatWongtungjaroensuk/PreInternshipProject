@@ -8,7 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 function AllAnimeTypeScreen({route}) {
   const { colors } = useTheme();
   const navigation = useNavigation()
-  const { titleName } = route.params;
+  const TitleName = route.params.typeTitle;
 
   return (
     <View style={[styles.container, {color: colors.background}]}>
@@ -17,7 +17,7 @@ function AllAnimeTypeScreen({route}) {
         <TouchableOpacity style={{}} onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={24} color={colors.text} />
         </TouchableOpacity>
-        <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>{JSON.stringify(titleName)}</Text>
+        <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>{TitleName}</Text>
       </View>
     </View>
   )

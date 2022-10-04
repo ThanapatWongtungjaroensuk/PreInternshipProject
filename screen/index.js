@@ -5,6 +5,8 @@ import SearchScreen from "./searchScreen"
 import LoginScreen from "./loginScreen"
 import AllAnimeTypeScreen from "./allAnimeFromType"
 import RegisterScreen from "./registerScreen"
+import AnimeDetails from './animeDetails'
+import ListMarkScreen from './listMarkScreen'
 
 export {
     HomeScreen,
@@ -13,5 +15,7 @@ export {
     SearchScreen,
     LoginScreen,
     AllAnimeTypeScreen,
-    RegisterScreen
+    RegisterScreen,
+    AnimeDetails,
+    ListMarkScreen
 }

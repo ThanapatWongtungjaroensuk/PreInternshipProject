@@ -71,7 +71,7 @@ const AccountScreen = () => {
           title="My list"
           typeIcon="Entypo"
           icon="list"
-          onPress={() => console.log("Pressed")}
+          onPress={() => navigation.navigate('MyList')}
         />
         <ButtonList
           title="Settings"
