@@ -31,7 +31,7 @@ function ShowThumbnails() {
           setAllAnime(response.data)
         }
         catch(error) {
-          Alert.alert('Error fetch Anime data')
+          console.log(error)
         }
       }
       fetchAnime()

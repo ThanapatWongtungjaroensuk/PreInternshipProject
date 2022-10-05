@@ -27,7 +27,7 @@ function AnimeDetails({route}) {
           setAnimeTrailer(response.data.animes_trailer)
         }
         catch(error) {
-          Alert.alert('Error fetch Anime data')
+          console.log(error)
         }
       }
       fetchAnime(animeID)

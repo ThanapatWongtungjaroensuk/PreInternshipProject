@@ -6,10 +6,13 @@ import axios from 'axios';
 
 
 const ShowItem = ({ item }) => {
-
+    
     return (
       <View style={styles.card}>
+        <View style={styles.date}>
             <Text>{item.news_date}</Text>
+            <Text>{item.news_date}</Text>
+        </View>
             <Image 
                 style={styles.showImage}
                 source={{uri: item.news_wallpaper}}
@@ -61,11 +64,14 @@ const styles = StyleSheet.create({
       marginRight: 6
     },
     showImage:{
-      width: 200,
-      height: 200,
+      width: 330,
+      height: 300,
     },
     card: {
         flexDirection: 'row',
 
+    },
+    date: {
+        flexDirection: 'column'
     }
   });
