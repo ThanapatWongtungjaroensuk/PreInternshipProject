@@ -6,14 +6,28 @@ import axios from 'axios';
 
 
 const ShowItem = ({ item }) => {
+    const { colors } = useTheme();
 
     return (
       <View style={styles.card}>
-            <Text>{item.news_date}</Text>
-            <Image 
-                style={styles.showImage}
-                source={{uri: item.news_wallpaper}}
-            />
+        <View style={styles.date}>
+            <Text style={[styles.yearText,{color: colors.text}]}>{item.news_date.substring(3)}</Text>
+            <Text style={{color: colors.text,fontWeight: '700', marginTop: 5}}>Month</Text>
+            <Text style={[styles.monthText,{color: colors.text}]}>{item.news_date.split("/2023")}</Text>
+        </View>
+        <View style={{flex: 1,flexDirection: 'row',marginRight: 5}}>
+          <Image 
+            style={styles.showImage}
+            source={{uri: item.news_wallpaper}}
+          />
+          <View style={{flex: 1}}>
+            <Text style={[styles.animeName,{color: colors.text,flexShrink: 1}]}>{item.news_name}</Text>
+            <View>
+              <Text style={[styles.animeDetail,{color: colors.text,flexShrink: 1}]}>{item.news_description}</Text>
+              <Text style={{color: colors.text,flexShrink: 1,fontSize: 12,margin: 5,fontWeight:'700'}}>Studio : {item.news_studio}</Text>
+            </View>
+          </View>
+        </View>
       </View>
     )
   }
@@ -61,11 +75,36 @@ const styles = StyleSheet.create({
       marginRight: 6
     },
     showImage:{
-      width: 200,
-      height: 200,
+      width: 140,
+      height: 190,
+      borderRadius: 10
     },
     card: {
-        flexDirection: 'row',
-
+      flexDirection: 'row',
+      marginVertical: 10
+    },
+    date: {
+      flexDirection: 'column',
+      marginHorizontal: 10,
+      alignItems: 'center'
+    },
+    yearText: {
+      fontSize: 15,
+      fontWeight: '800'
+    },
+    monthText: {
+      fontSize: 30,
+      fontWeight: '800'
+    },
+    animeName: {
+      fontSize: 14,
+      fontWeight: '800',
+      marginLeft: 5
+    },
+    animeDetail: {
+      fontSize: 12,
+      fontWeight: '400',
+      marginLeft: 5,
+      marginTop: 5
     }
   });

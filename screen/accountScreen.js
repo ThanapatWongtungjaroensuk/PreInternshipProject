@@ -4,11 +4,12 @@ import { View, Text, StyleSheet,TouchableOpacity, ScrollView, Image } from 'reac
 import { useTheme } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/core'
 import { Octicons, Entypo, Ionicons, AntDesign } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ButtonList = ({title,icon,onPress,typeIcon}) => {
 
   const { colors } = useTheme();
-  
+
   const TypeIcon = () => {
     if(typeIcon == 'Ionicons'){
       return(
@@ -45,6 +46,15 @@ const AccountScreen = () => {
   const { colors } = useTheme();
   const navigation = useNavigation()
   
+  const removeUser = async () => {
+    try {
+        await AsyncStorage.removeItem('@userToken');
+        await AsyncStorage.removeItem('@passwordToken');
+    } catch (err) {
+        console.log(err);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.detailAccount}>
@@ -89,7 +99,10 @@ const AccountScreen = () => {
           title="Sign out"
           typeIcon="Octicons"
           icon="sign-out"
-          onPress={() => navigation.replace("Login")}
+          onPress={() => {
+            removeUser()
+            navigation.replace("Login")
+          }}
         />
       </View>
     </View>
