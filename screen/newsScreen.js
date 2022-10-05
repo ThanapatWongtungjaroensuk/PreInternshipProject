@@ -1,14 +1,23 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import { useTheme } from '@react-navigation/native';
+import { Ionicons} from '@expo/vector-icons';
+import ShowCardNews from '../component/showCardNews';
 
 function NewsScreen() {
   const { colors } = useTheme();
   return (
     <View style={[styles.container, {color: colors.background}]}>
-      <Text style={{fontSize: 25, color: colors.text}}>News page</Text>
       <StatusBar/>
+      <View style={[styles.headerBar , {color: colors.background}]}>
+        <Text style={[styles.titleHeader,{color: colors.text}]}>Up Coming</Text>
+      </View>
+      <ScrollView style={styles.detailNew}>
+        <View>
+          <ShowCardNews />
+        </View>
+      </ScrollView>
     </View>
   )
 }
@@ -18,7 +27,20 @@ export default NewsScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  headerBar: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    marginTop: 45,
+    padding: 10
+  },
+  titleHeader: {
+    fontSize: 25,
+    fontWeight: '700',
+    marginLeft: 10
+  },
+  detailNew: {
+    flex: 1,
+  }
 });

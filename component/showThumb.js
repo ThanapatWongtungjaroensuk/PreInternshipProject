@@ -8,7 +8,7 @@ import axios from 'axios';
 const ShowItem = ({ item }) => {
 
   const navigation = useNavigation()
-  
+
   return (
     <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Details',{animeID: item.animes_id})}>
         <Image 
@@ -40,7 +40,7 @@ function ShowThumbnails() {
     const renderItem = ({ item }) => (
       <ShowItem item={item}/>
     );
-
+    
     return (
     <FlatList 
         horizontal={true}
