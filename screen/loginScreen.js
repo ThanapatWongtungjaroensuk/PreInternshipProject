@@ -1,18 +1,87 @@
 import React, {useState, useEffect} from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Pressable } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Pressable, Alert } from 'react-native'
 import { useTheme } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/core'
 import { AntDesign, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from '../component/useTogglePasswordVisibility';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 function LoginScreen() {
+  const [checkLogin, setCheckLogin] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [user, setUser] = useState([])
+  const [ userToken, setUserToken] = useState('')
+  const [ passwordToken, setPasswordToken] = useState('')
   const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
   const { colors } = useTheme();
   const navigation = useNavigation()
+
+  const firstLoad = async () => {
+    try {
+      const userAsyncToken = await AsyncStorage.getItem('@userToken');
+      setUserToken(userAsyncToken)
+      const passwordAsyncToken = await AsyncStorage.getItem('@passwordToken');
+      setPasswordToken(passwordAsyncToken)
+      
+      if(userAsyncToken != null && passwordAsyncToken != null) {
+        navigation.replace("Root")
+      }
+    } catch (err) {
+        console.log(err);
+    }
+  };
+
+  useEffect(() => {
+
+    firstLoad()
+    const fetchUser = async () => {
+      const url = `http://192.168.1.102:5000/accounts`
+      try {
+        const response = await axios.get(url)
+        setUser(response.data)
+      }
+      catch(error) {
+        console.log(error)
+      }
+    }
+    fetchUser()
+  }, [])
+
+  const saveUser = async (user,password) => {
+    try {
+        await AsyncStorage.setItem('@userToken', user);
+        await AsyncStorage.setItem('@passwordToken', password);
+    } catch (err) {
+        console.log(err);
+    }
+  };
+
+  const handleLogin = () => {
+    const foundUser = user.find(
+      (user) => user.accounts_user === email && user.accounts_pwd === password
+    )
+    try {
+      if(foundUser) {
+        saveUser(foundUser.accounts_user,foundUser.accounts_pwd)
+        navigation.replace("Root")
+      }
+      else{
+        Alert.alert(
+          "ไม่สามารถเข้าสู่ระบบได้",
+          "Email or Password is wrong",
+          [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        )
+      }
+    } catch(error) {
+
+    }
+  }
+
 
   return (
     <View style={[styles.container, {color: colors.background}]} behavior={"padding"}>
@@ -22,10 +91,11 @@ function LoginScreen() {
         source={require('../assets/High_Resolution_Logo_-_Transparent_Background.png')}
       />
       <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Sign in to your account</Text>
+      <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>{user.accounts_role}</Text>
       <View style={[styles.inputContainer, {color: colors.background}]}>
         <View style={styles.inputStyle}>
           <TextInput
-            placeholder="Email"
+            placeholder={"Email"}
             value={email}
             onChangeText={text => setEmail(text)}
             style={styles.input}
@@ -46,7 +116,7 @@ function LoginScreen() {
       </View>
       <View style={[styles.buttonLogin, {color: colors.background}]}>
         <TouchableOpacity
-          onPress={() => navigation.replace("Root")}
+          onPress={handleLogin}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Login</Text>

@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 45,
-    padding: 10
+    padding: 10,
+    elevation:5
   },
   titleHeader: {
     fontSize: 25,
