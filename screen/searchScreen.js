@@ -64,12 +64,8 @@ const App = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <AntDesign 
-        name="search1" 
-        size={24} 
-        color="black"
-        />
-        <TextInput
+      <AntDesign name="search1" size={24} color="black" />
+      <TextInput
           style={styles.textInputStyle}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
@@ -101,7 +97,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 20,
     margin: 5,
-    borderColor: '#EC9131',
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'flex-start',
