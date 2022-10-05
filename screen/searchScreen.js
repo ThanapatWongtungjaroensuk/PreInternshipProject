@@ -1,49 +1,113 @@
-import React, { useEffect } from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { useTheme } from '@react-navigation/native';
-import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/core'
+import React, { useState, useEffect } from 'react';
+import { AntDesign } from '@expo/vector-icons'; 
+import {SafeAreaView,Text,StyleSheet,View,FlatList,TextInput,TouchableOpacity,Image} from 'react-native';
 
-function SearchScreen() {
+const App = () => {
+  const [search, setSearch] = useState('');
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
 
-  const { colors } = useTheme();
-  const navigation = useNavigation()
+  useEffect(() => {
+    fetch('http://192.168.2.5:5000/animes')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        setFilteredDataSource(responseJson);
+        setMasterDataSource(responseJson);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-useEffect(() => {
-  navigation.setOptions({
-    headerSearchBarOptions: {
-      placeholder: "Search"
-    },
-  })
-}, [navigation])
+  const searchFilterFunction = (text) => {
+    if (text) {
+      const newData = masterDataSource.filter(function (item) {
+        const itemData = item.animes_name
+          ? item.animes_name.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
 
+  const ItemView = ({ item }) => {
+    return (
+      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
+        {item.id}
+        {item.animes_name.toUpperCase()}
+      </Text>
+    );
+  };
+
+  const ItemSeparatorView = () => {
+    return (
+      <View
+        style={{
+          height: 0.5,
+          width: '100%',
+          backgroundColor: '#C8C8C8',
+        }}
+      />
+    );
+  };
+
+  const getItem = (item) => {
+    alert('Id : ' + item.id + ' Title : ' + item.animes_name);
+  };
 
   return (
-    <View style={[styles.container, {color: colors.background}]}>
-      <StatusBar/>
-      <View style={[styles.headerBar , {color: colors.background}]}>
-        <TouchableOpacity style={{}} onPress={() => navigation.goBack()}>
-          <AntDesign name="arrowleft" size={24} color={colors.text} />
-        </TouchableOpacity>
-        <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>Search</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <AntDesign 
+        name="search1" 
+        size={24} 
+        color="black"
+        />
+        <TextInput
+          style={styles.textInputStyle}
+          onChangeText={(text) => searchFilterFunction(text)}
+          value={search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        />
+        <FlatList
+          data={filteredDataSource}
+          keyExtractor={(item, index) => index.toString()}
+          ItemSeparatorComponent={ItemSeparatorView}
+          renderItem={ItemView}
+          //numColumns={3}
+          horizontal={false}
+        />
       </View>
-    </View>
-  )
-}
-
-export default SearchScreen
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: '#FFFFFF',
   },
-  headerBar: {
+  itemStyle: {
+    padding: 10,
+  },
+  textInputStyle: {
+    height: 40,
+    borderWidth: 1,
+    paddingLeft: 20,
+    margin: 5,
+    borderColor: '#EC9131',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'flex-start',
     flexDirection: 'row',
-    marginTop: 45,
-    padding: 10,
-    elevation:5
+
   },
 });
+
+export default App;
