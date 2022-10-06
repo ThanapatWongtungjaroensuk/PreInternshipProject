@@ -13,11 +13,9 @@ function NewsScreen() {
       <View style={[styles.headerBar , {color: colors.background}]}>
         <Text style={[styles.titleHeader,{color: colors.text}]}>Up Coming</Text>
       </View>
-      <ScrollView style={styles.detailNew}>
-        <View>
-          <ShowCardNews />
-        </View>
-      </ScrollView>
+        <View style={styles.detailNew}>
+        <ShowCardNews />
+      </View>
     </View>
   )
 }

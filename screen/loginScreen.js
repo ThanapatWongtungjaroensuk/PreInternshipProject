@@ -38,7 +38,7 @@ function LoginScreen() {
 
     firstLoad()
     const fetchUser = async () => {
-      const url = `http://192.168.1.102:5000/accounts`
+      const url = `http://10.34.74.46:5000/accounts`
       try {
         const response = await axios.get(url)
         setUser(response.data)
@@ -50,10 +50,11 @@ function LoginScreen() {
     fetchUser()
   }, [])
 
-  const saveUser = async (user,password) => {
+  const saveUser = async (user,password,name) => {
     try {
         await AsyncStorage.setItem('@userToken', user);
         await AsyncStorage.setItem('@passwordToken', password);
+        await AsyncStorage.setItem('@nameToken', name);
     } catch (err) {
         console.log(err);
     }
@@ -65,7 +66,7 @@ function LoginScreen() {
     )
     try {
       if(foundUser) {
-        saveUser(foundUser.accounts_user,foundUser.accounts_pwd)
+        saveUser(foundUser.accounts_user,foundUser.accounts_pwd,foundUser.accounts_name)
         navigation.replace("Root")
       }
       else{

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet,TouchableOpacity, ScrollView, Image } from 'react-native'
 import { useTheme } from '@react-navigation/native';
@@ -45,11 +45,28 @@ const AccountScreen = () => {
 
   const { colors } = useTheme();
   const navigation = useNavigation()
+  const [name, setName] = useState('')
+  const [username, setUsername] = useState('')
   
+  useEffect(() => {
+    const getName = async () => {
+      try {
+        const nameToken = await AsyncStorage.getItem('@nameToken');
+        setName(nameToken)
+        const usernameToken = await AsyncStorage.getItem('@userToken');
+        setUsername(usernameToken)
+      } catch (err) {
+          console.log(err);
+      }
+    };
+    getName()
+  }, [])
+
   const removeUser = async () => {
     try {
         await AsyncStorage.removeItem('@userToken');
         await AsyncStorage.removeItem('@passwordToken');
+        await AsyncStorage.removeItem('@nameToken');
     } catch (err) {
         console.log(err);
     }
@@ -63,11 +80,10 @@ const AccountScreen = () => {
             style={styles.userLogo}
             source={require('../assets/user.png')}
           />
-          <Text style={{color: colors.text,fontSize: 20,fontWeight: 'bold', marginLeft: 20,flexShrink: 1}}>Dream</Text>
+          <Text style={{color: colors.text,fontSize: 20,fontWeight: 'bold', marginLeft: 20,flexShrink: 1}}>{name}</Text>
         </View>
         <View style={{flexDirection: 'column',alignItems:'flex-start'/*,backgroundColor: 'blue'*/}}>
-          <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Email: thanapat.wongt@ku.th</Text>
-          <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Password: ***********</Text>
+          <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Email: {username}</Text>
         </View>
       </View>
       <View style={{flex: 1,/*backgroundColor: 'green'*/}}>

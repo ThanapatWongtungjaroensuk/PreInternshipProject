@@ -38,7 +38,7 @@ function ShowCardNews() {
 
     useEffect(() => {
         const fetchNews = async () => {
-          const url = `http://192.168.1.102:5000/news`
+          const url = `http://10.34.74.46:5000/news`
           try {
             const response = await axios.get(url)
             setAllNews(response.data)

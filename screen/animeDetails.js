@@ -20,7 +20,7 @@ function AnimeDetails({route}) {
 
     useEffect(() => {
       const fetchAnime = async (ID) => {
-        const url = `http://192.168.1.102:5000/animes/${ID}`
+        const url = `http://10.34.74.46:5000/animes/${ID}`
         try {
           const response = await axios.get(url)
           setAnime(response.data)

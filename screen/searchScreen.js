@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { AntDesign } from '@expo/vector-icons'; 
-import {SafeAreaView,Text,StyleSheet,View,FlatList,TextInput,TouchableOpacity,Image} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, TextInput } from 'react-native'
+import { useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/core'
+import { AntDesign, Feather, Entypo } from '@expo/vector-icons';
 
-const App = () => {
+const ItemView = ({ item }) => {
+    const navigation = useNavigation()
+  
+    return (
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Details', { animeID: item.animes_id })}>
+        <Image
+          style={styles.showImage}
+          source={{ uri: item.animes_image }}
+        />
+      </TouchableOpacity>
+    );
+  };
+
+function SearchScreen() {
+  const { colors } = useTheme();
+  const navigation = useNavigation()
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.2.5:5000/animes')
+    fetch('http://10.34.74.46:5000/animes')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
@@ -36,73 +54,82 @@ const App = () => {
     }
   };
 
-  const ItemView = ({ item }) => {
-    return (
-      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
-        {item.id}
-        {item.animes_name.toUpperCase()}
-      </Text>
-    );
-  };
-
-  const ItemSeparatorView = () => {
-    return (
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    );
-  };
-
-  const getItem = (item) => {
-    alert('Id : ' + item.id + ' Title : ' + item.animes_name);
-  };
+  const renderItem = ({ item }) => (
+    <ItemView item={item} />
+  );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
-      <AntDesign name="search1" size={24} color="black" />
-      <TextInput
-          style={styles.textInputStyle}
-          onChangeText={(text) => searchFilterFunction(text)}
-          value={search}
-          underlineColorAndroid="transparent"
-          placeholder="Search Here"
-        />
-        <FlatList
-          data={filteredDataSource}
-          keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
-          //numColumns={3}
-          horizontal={false}
-        />
+    <View style={[styles.container, {color: colors.background}]}>
+      <StatusBar/>
+      <View style={[styles.headerBar , {color: colors.background}]}>
+        <TouchableOpacity style={{}} onPress={() => navigation.goBack()}>
+          <AntDesign name="arrowleft" size={24} color={colors.text} />
+        </TouchableOpacity>
+        <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>Search</Text>
       </View>
-    </SafeAreaView>
-  );
-};
+      <View style={{ flexDirection: 'row',alignItems: 'center'}}>
+        <Feather name="search" size={22} color={colors.text} style={{paddingHorizontal: 8}}/>
+        <View style={styles.inputStyle}>
+          <TextInput
+            style={styles.textInputStyle}
+            onChangeText={(text) => searchFilterFunction(text)}
+            value={search}
+            underlineColorAndroid="transparent"
+            placeholder="Search"
+          />
+        </View>
+        <TouchableOpacity style={{}} onPress={{}}>
+          <Entypo name="circle-with-cross" size={22} color={colors.text} style={{paddingHorizontal: 5}}/>
+        </TouchableOpacity>
+      </View>
+      <FlatList
+        data={filteredDataSource}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={renderItem}
+        numColumns={3}
+      />
+    </View>
+  )
+}
+
+export default SearchScreen
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFFF',
+    flex: 1,
   },
-  itemStyle: {
-    padding: 10,
-  },
-  textInputStyle: {
-    height: 40,
-    borderWidth: 1,
-    paddingLeft: 20,
-    margin: 5,
-    backgroundColor: '#FFFFFF',
+  headerBar: {
     alignItems: 'center',
     justifyContent: 'flex-start',
     flexDirection: 'row',
-
+    marginTop: 45,
+    padding: 10,
+    elevation:5
+  },
+  textInputStyle: {
+    width: 280,
+    fontSize: 14,
+  },
+  item: {
+    width: 122,
+    height: 200,
+    borderRadius: 7,
+    overflow: 'hidden',
+    marginHorizontal: 3,
+    marginTop: 6
+  },
+  showImage: {
+    width: '100%',
+    height: '100%',
+  },
+  inputStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#6F6F6F',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    //borderRadius: 30,
+    elevation:4
   },
 });
-
-export default App;

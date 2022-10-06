@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Pressable } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Pressable, Alert } from 'react-native'
 import { useTheme } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/core'
 import { AntDesign, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from '../component/useTogglePasswordVisibility';
-
+import axios from 'axios';
 
 function RegisterScreen() {
   const [name, setName] = useState('')
@@ -15,6 +15,100 @@ function RegisterScreen() {
   const { passwordVisibility, rightIcon, handlePasswordVisibility, passwordVisibilityConfirm, rightIconConfirm, handlePasswordVisibilityConfirm } = useTogglePasswordVisibility();
   const { colors } = useTheme();
   const navigation = useNavigation()
+
+
+  useEffect(() => {
+
+  }, [])
+
+
+  const handleRegister = () => {
+    console.log(name)
+    console.log(email)
+    console.log(password)
+    console.log(passwordConfirm)
+    if(password === passwordConfirm && name.length != 0 && email.length != 0 && password.length != 0 && passwordConfirm.length != 0) {
+      axios.post(`http://10.34.74.46:5000/accounts`, {
+            accounts_name:name,
+            accounts_user:email,
+            accounts_pwd:password
+        }).then((response) => {
+          Alert.alert(
+            "Register Success",
+            "----------------"
+            [
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ]
+          )
+          navigation.replace('Login')
+        }).catch((error) => {
+          console.log(error)
+      });
+    }
+    else if(password != passwordConfirm && password.length != 0 && passwordConfirm.length != 0 && email.length != 0 && password.length != 0){
+      Alert.alert(
+        "ลงทะเบียนไม่สำเร็จ",
+        "Please check your password and confirm password is same",
+        [
+          { text: "OK", onPress: () => console.log("OK Pressed") }
+        ]
+      )
+    }
+    else if(email.length === 0 || name.length === 0 || password.length === 0 || passwordConfirm.length === 0 ){
+      if(name.length === 0){
+        Alert.alert(
+          "ลงทะเบียนไม่สำเร็จ",
+          "Please enter name",
+          [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        )
+      }
+      else if(email.length === 0){
+        Alert.alert(
+          "ลงทะเบียนไม่สำเร็จ",
+          "Please enter email",
+          [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        )
+      }else if(password.length === 0){
+        Alert.alert(
+          "ลงทะเบียนไม่สำเร็จ",
+          "Please enter password",
+          [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        )
+      }else if(passwordConfirm.length === 0){
+        Alert.alert(
+          "ลงทะเบียนไม่สำเร็จ",
+          "Please enter confirm password",
+          [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+          ]
+        )
+      }
+    }
+    // try {
+    //   if(foundUser) {
+    //     saveUser(foundUser.accounts_user,foundUser.accounts_pwd,foundUser.accounts_name)
+    //     navigation.replace("Root")
+    //   }
+    //   else{
+    //     Alert.alert(
+    //       "ลงทะเบียนไม่สำเร็จ",
+    //       "Please enter Email or Password",
+    //       [
+    //         { text: "OK", onPress: () => console.log("OK Pressed") }
+    //       ]
+    //     )
+    //   }
+    // } catch(error) {
+    //   console.log(error.message)
+    // }
+  }
+
 
   return (
     <View style={[styles.container, {color: colors.background}]} behavior={"padding"}>
@@ -74,7 +168,7 @@ function RegisterScreen() {
       </View>
       <View style={[styles.buttonRegister, {color: colors.background}]}>
         <TouchableOpacity
-          onPress={() => console.log("Register Pressed")}
+          onPress={handleRegister}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Register</Text>
