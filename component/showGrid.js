@@ -19,7 +19,7 @@ function ShowGrid({ title }) {
             </TouchableOpacity>
         </View>
         <View style={{marginTop: 3}}>
-            <ShowThumbnails />
+            <ShowThumbnails title={title}/>
         </View>
     </View>
   )

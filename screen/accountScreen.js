@@ -82,11 +82,13 @@ const AccountScreen = () => {
           />
           <Text style={{color: colors.text,fontSize: 20,fontWeight: 'bold', marginLeft: 20,flexShrink: 1}}>{name}</Text>
         </View>
-        <View style={{flexDirection: 'column',alignItems:'flex-start'/*,backgroundColor: 'blue'*/}}>
+        <View style={{flexDirection: 'column',alignItems:'flex-start'}}>
           <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Email: {username}</Text>
+          <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Password: xxxxxxxxxx</Text>
+          <Text style={{color: colors.text,fontWeight: 'bold',fontSize: 15}}>Phone: 0XX-XXX-XXXX</Text>
         </View>
       </View>
-      <View style={{flex: 1,/*backgroundColor: 'green'*/}}>
+      <View style={{flex: 1,}}>
         <ButtonList
           title="Notification"
           typeIcon="Ionicons"
@@ -148,7 +150,6 @@ const styles = StyleSheet.create({
     flex: 0.7,
     justifyContent: 'center',
     alignItems: 'flex-start',
-    //backgroundColor: 'red',
     paddingLeft: 15,
     paddingBottom: 5
   },

@@ -23,6 +23,10 @@ function HomeScreen() {
         <View style={styles.thumbFrame}>
           <ShowGrid title="Top Anime"/>
           <ShowGrid title="New Anime"/>
+          <ShowGrid title="School Style"/>
+          <ShowGrid title="Action Style"/>
+          <ShowGrid title="Fantasy Style"/>
+          <ShowGrid title="Drama Style"/>
         </View>
       </ScrollView>
     </SafeAreaView>

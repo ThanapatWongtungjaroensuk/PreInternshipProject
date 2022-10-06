@@ -19,7 +19,7 @@ const ShowItem = ({ item }) => {
   )
 }
 
-function ShowThumbnails() {
+function ShowThumbnails({title}) {
 
   const [allAnime, setAllAnime] = useState(null)
     
