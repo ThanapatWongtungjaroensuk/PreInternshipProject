@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   },
   listButton: {
     flexDirection: 'row',
-    backgroundColor: '#363636',
+    backgroundColor: '#332D47',
     height: 50,
     alignItems: 'center',
     paddingLeft: 25,

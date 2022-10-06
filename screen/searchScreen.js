@@ -26,7 +26,7 @@ function SearchScreen() {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.34.74.46:5000/animes')
+    fetch('http://192.168.1.100:5000/animes')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
@@ -67,8 +67,8 @@ function SearchScreen() {
         </TouchableOpacity>
         <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>Search</Text>
       </View>
-      <View style={{ flexDirection: 'row',alignItems: 'center'}}>
-        <Feather name="search" size={22} color={colors.text} style={{paddingHorizontal: 8}}/>
+      <View style={{ flexDirection: 'row',alignItems: 'center',backgroundColor: '#1B1F22'}}>
+        <Feather name="search" size={22} color='white' style={{paddingHorizontal: 8}}/>
         <View style={styles.inputStyle}>
           <TextInput
             style={styles.textInputStyle}
@@ -76,11 +76,9 @@ function SearchScreen() {
             value={search}
             underlineColorAndroid="transparent"
             placeholder="Search"
+            placeholderTextColor='white'
           />
         </View>
-        <TouchableOpacity style={{}} onPress={{}}>
-          <Entypo name="circle-with-cross" size={22} color={colors.text} style={{paddingHorizontal: 5}}/>
-        </TouchableOpacity>
       </View>
       <FlatList
         data={filteredDataSource}
@@ -109,6 +107,7 @@ const styles = StyleSheet.create({
   textInputStyle: {
     width: 280,
     fontSize: 14,
+    color: 'white'
   },
   item: {
     width: 122,
@@ -126,10 +125,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#6F6F6F',
+    backgroundColor: '#1B1F22',
     paddingHorizontal: 15,
     paddingVertical: 10,
-    //borderRadius: 30,
-    elevation:4
   },
 });

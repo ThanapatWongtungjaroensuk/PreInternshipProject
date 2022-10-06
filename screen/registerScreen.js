@@ -28,7 +28,7 @@ function RegisterScreen() {
     console.log(password)
     console.log(passwordConfirm)
     if(password === passwordConfirm && name.length != 0 && email.length != 0 && password.length != 0 && passwordConfirm.length != 0) {
-      axios.post(`http://10.34.74.46:5000/accounts`, {
+      axios.post(`http://192.168.1.100:5000/accounts`, {
             accounts_name:name,
             accounts_user:email,
             accounts_pwd:password

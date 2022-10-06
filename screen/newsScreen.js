@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 45,
     padding: 10,
-    elevation:5
+    //elevation:4,
   },
   titleHeader: {
     fontSize: 25,

@@ -25,7 +25,7 @@ function ShowThumbnails() {
     
     useEffect(() => {
       const fetchAnime = async () => {
-        const url = `http://10.34.74.46:5000/animes`
+        const url = `http://192.168.1.100:5000/animes`
         try {
           const response = await axios.get(url)
           setAllAnime(response.data)

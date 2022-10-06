@@ -38,7 +38,7 @@ function LoginScreen() {
 
     firstLoad()
     const fetchUser = async () => {
-      const url = `http://10.34.74.46:5000/accounts`
+      const url = `http://192.168.1.100:5000/accounts`
       try {
         const response = await axios.get(url)
         setUser(response.data)
