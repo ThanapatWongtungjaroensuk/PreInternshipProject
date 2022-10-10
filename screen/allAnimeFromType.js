@@ -19,6 +19,12 @@ function AllAnimeTypeScreen({route}) {
         </TouchableOpacity>
         <Text style={{fontSize: 20, fontWeight: '500', color: colors.text, marginLeft: 30}}>{TitleName}</Text>
       </View>
+      {/* <FlatList
+        data={filteredDataSource}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+        numColumns={3}
+      /> */}
     </View>
   )
 }

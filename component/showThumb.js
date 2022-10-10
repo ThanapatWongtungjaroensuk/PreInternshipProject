@@ -19,23 +19,43 @@ const ShowItem = ({ item }) => {
   )
 }
 
-function ShowThumbnails({title}) {
-
-  const [allAnime, setAllAnime] = useState(null)
+function ShowThumbnails({title,idd}) {
+  console.log(idd)
+  const [allAnime, setAllAnime] = useState([])
+  const [foundAnime, setFoundAnime] = useState([])
     
     useEffect(() => {
-      const fetchAnime = async () => {
+
+      const fetchAnime = async (id) => {
         const url = `http://192.168.1.100:5000/animes`
         try {
           const response = await axios.get(url)
-          setAllAnime(response.data)
+          if(title === 'Top Anime'){
+            setFoundAnime(response.data)
+            const filtered  = foundAnime.filter(
+              foundAnime => foundAnime.animes_score >= 8.5 )
+            console.log(filtered)
+            setAllAnime(filtered)
+          }
+          else if(title === 'New Anime'){
+            setFoundAnime(response.data)
+            const filtered  = foundAnime.filter(
+              foundAnime => foundAnime.animes_year === 2022 )
+            console.log(filtered)
+            setAllAnime(filtered)
+          }
+          else {
+            const url1 = `http://192.168.1.100:5000/tagDetails/anime/${id}`
+            const response1 = await axios.get(url1)
+            setAllAnime(response1.data)
+          }
         }
         catch(error) {
           console.log(error)
         }
       }
-      fetchAnime()
-    }, []);
+      fetchAnime(idd)
+    }, [idd]);
 
     const renderItem = ({ item }) => (
       <ShowItem item={item}/>

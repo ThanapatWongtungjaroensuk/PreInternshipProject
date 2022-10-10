@@ -21,12 +21,12 @@ function HomeScreen() {
       </View>
       <ScrollView style={styles.detailscreen}>
         <View style={styles.thumbFrame}>
-          <ShowGrid title="Top Anime"/>
-          <ShowGrid title="New Anime"/>
-          <ShowGrid title="School Style"/>
-          <ShowGrid title="Action Style"/>
-          <ShowGrid title="Fantasy Style"/>
-          <ShowGrid title="Drama Style"/>
+          <ShowGrid title="Top Anime" id={100}/>
+          <ShowGrid title="New Anime" id={200}/>
+          <ShowGrid title="School Style" id={2} />
+          <ShowGrid title="Action Style" id={8}/>
+          <ShowGrid title="Fantasy Style" id={14} />
+          <ShowGrid title="Drama Style" id={36} />
         </View>
       </ScrollView>
     </SafeAreaView>

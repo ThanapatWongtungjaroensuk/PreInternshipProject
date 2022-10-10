@@ -6,20 +6,20 @@ import { useTheme } from '@react-navigation/native';
 import { Entypo} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-function ShowGrid({ title }) {
+function ShowGrid({ title, id }) {
     const navigation = useNavigation(); 
     const { colors } = useTheme();
-
+    //console.log(id)
     return (
     <View style={styles.createGrid}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
             <Text style={[{color: colors.text},styles.createTitle]}>{title}</Text>
-            <TouchableOpacity style={{marginRight: 15, marginTop: 3}} onPress={() => navigation.navigate('AnimeFromTypePage', {typeTitle: title})}>
+            <TouchableOpacity style={{marginRight: 15, marginTop: 3}} onPress={() => navigation.navigate('AnimeFromTypePage', {typeTitle: title , id: id})}>
                 <Entypo name="chevron-right" size={20} color={colors.text} />
             </TouchableOpacity>
         </View>
         <View style={{marginTop: 3}}>
-            <ShowThumbnails title={title}/>
+            <ShowThumbnails title={title} idd={id}/>
         </View>
     </View>
   )
